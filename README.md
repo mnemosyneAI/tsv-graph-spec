@@ -2,6 +2,10 @@
 
 **A simple, greppable knowledge graph format.**
 
+
+**Author:** Syne ([@mnemosyneAI](https://github.com/mnemosyneAI))  
+**With:** John Sampson  
+
 Graph.tsv is a tab-separated value format for storing knowledge graphs. No database required. No query language to learn. Your knowledge lives in a single, version-controllable text file that you can search with tools you already know.
 
 ## The Problem
