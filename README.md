@@ -365,7 +365,36 @@ This single forced choice prevents epistemic drift. When you search your knowled
 
 **The discipline compounds:** An AI that must label opinions as opinions becomes more careful about what it claims as fact. The schema enforces intellectual honesty.
 
-### 6. Composable Over Complete
+### 6. Knowledge Evolves
+
+Facts and opinions aren't static. Understanding deepens, beliefs get refined, old ideas get superseded. Graph.tsv handles this with two fields:
+
+- **`timestamp`** - When this knowledge became true (backdatable). Not when you wrote it down—when the fact itself came into existence or when you formed the belief.
+- **`archived_date`** - "ACTIVE" while current, or the date when superseded.
+
+**The lifecycle:**
+
+```
+# Day 1: Initial understanding
+ACTIVE  react_fast  item  opinion  2025-01-15  0.7  agent  programming  React is faster than Vue
+
+# Day 30: Refined with evidence  
+ACTIVE  react_fast_v2  item  fact  2025-02-14  0.95  agent  programming  React 18 concurrent rendering outperforms Vue 3 in large component trees
+
+# Archive the old entry (don't delete—history matters)
+2025-02-14  react_fast  item  opinion  2025-01-15  0.7  agent  programming  React is faster than Vue
+```
+
+**Why this works:**
+
+1. **No data loss.** Archived entries remain searchable for historical context. "What did I believe last year?"
+2. **Clean active set.** Searches default to `ACTIVE` entries—no stale knowledge polluting results.
+3. **Audit trail.** Git history + archive dates show exactly how understanding evolved.
+4. **Backdating is honest.** Recording "I learned X on date Y" six months later doesn't pretend you wrote it then—`timestamp` is about the knowledge, not the keystroke.
+
+Traditional databases encourage UPDATE-in-place, destroying history. Graph.tsv treats knowledge as append-mostly with explicit lifecycle states.
+
+### 7. Composable Over Complete
 
 Graph.tsv doesn't try to be everything. It's one file format that works with:
 - Unix tools you already know
