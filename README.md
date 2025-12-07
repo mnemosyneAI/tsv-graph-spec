@@ -348,7 +348,24 @@ If you can't open your knowledge base in Notepad and understand it, something is
 
 No magic. No inference. No "it depends on the query context."
 
-### 5. Composable Over Complete
+### 5. Forced Epistemic Clarity
+
+The `stance` field forces a critical decision at write time: **Is this a fact, opinion, or aspiration?**
+
+This matters enormously for AI systems:
+
+**Without stance:** An AI inscribes "Python is the best language for beginners" and retrieves it later as if it were fact. The confidence of the original statement is lost. Hallucination and retrieved opinion become indistinguishable.
+
+**With stance:** The AI must choose:
+- `fact` - I know this is true (verifiable, external evidence)
+- `opinion` - I believe this (subjective, could be wrong)  
+- `aspiration` - I want this to be true (goal, not current reality)
+
+This single forced choice prevents epistemic drift. When you search your knowledge later, you know whether you're retrieving something you verified or something you believed. The `certainty` field adds gradation, but `stance` provides the fundamental category.
+
+**The discipline compounds:** An AI that must label opinions as opinions becomes more careful about what it claims as fact. The schema enforces intellectual honesty.
+
+### 6. Composable Over Complete
 
 Graph.tsv doesn't try to be everything. It's one file format that works with:
 - Unix tools you already know
