@@ -1,0 +1,7 @@
+archived_date	id	type	stance	timestamp	certainty	perspective	domain	ref1	ref2	content	relation	weight	schema	semantic_text
+ACTIVE	sky_blue	item	fact	2025-01-01T00:00:00Z	1.0	agent	science			The sky appears blue due to Rayleigh scattering			1.0	agent knows about science: The sky appears blue due to Rayleigh scattering
+ACTIVE	python_good	item	opinion	2025-01-01T00:00:00Z	0.8	agent	programming			Python is excellent for rapid prototyping			1.0	agent believes about programming: Python is excellent for rapid prototyping
+ACTIVE	learn_rust	item	aspiration	2025-01-01T00:00:00Z	0.9	agent	programming			I want to master Rust for systems work			1.0	agent aspires about programming: I want to master Rust for systems work
+ACTIVE	users_need_speed	item	observation	2025-01-01T00:00:00Z	0.85	agent	ux			Users abandon pages that take more than 3 seconds to load			1.0	agent observes about ux: Users abandon pages that take more than 3 seconds to load
+ACTIVE	link_001	link	fact	2025-01-01T00:00:00Z	1.0	agent		python_good	learn_rust		motivates	0.7	1.0	Link: python_good motivates learn_rust
+2025-06-15	old_belief	item	opinion	2024-01-01T00:00:00Z	0.6	agent	programming			JavaScript is the only web language			1.0	agent believed about programming: JavaScript is the only web language
